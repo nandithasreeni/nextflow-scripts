@@ -1,0 +1,46 @@
+{
+"userid":"621aebb16f509c1dd717dece",
+"deviceid":"coeus_v1_778",
+"data":[
+    {
+      "timestamps":1645365549000,
+      "sample_Nos":575,
+      "ledc1_pd1s":16415,
+      "ledc1_pd2s":0,
+      "ledc2_pd1s":16386,
+      "ledc2_pd2s":16393,
+      "ledc3_pd1s":16393,
+      "ledc3_pd2s":160,
+      "accxs":2476,
+      "accys":3051,
+      "acczs":0,
+      "temperatures":77,
+      "hrs":77,
+      "rrs":0,
+      "activity_classs":0,
+      "scd_states":1,
+      "spo2s":0,
+      "starts":0
+   },
+     {
+      "timestamps":1645381989000,
+      "sample_Nos":624,
+      "ledc1_pd1s":16415,
+      "ledc1_pd2s":0,
+      "ledc2_pd1s":16386,
+      "ledc2_pd2s":16386,
+      "ledc3_pd1s":16393,
+      "ledc3_pd2s":16393,
+      "accxs":121,
+      "accys":2558,
+      "acczs":3002,
+      "temperatures":0,
+      "hrs":60,
+      "rrs":0,
+      "activity_classs":1,
+      "scd_states":2,
+      "spo2s":0,
+      "starts":0
+   }
+    ]
+}

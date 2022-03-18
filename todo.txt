@@ -1,0 +1,69 @@
+create table/service for accepting and serve raw data
+create table/service for accepting and serving dashboard data
+Table view perticular user and all users 
+
+table for dashboard 
+    to keep updates of all users    
+    when user data gets updated, update this table also
+    user table to store user data.
+
+upload file as per testData.json
+
+this file contains required information.
+first serialise the file.. 
+get the data..
+user_id, device_id that will help to update the collection..
+create and update the collection in mongodb.. 
+also update he dashboard information..
+keeping adding the data like stack so that easy to access first 10, 100, 500 records..
+
+
+implementation with 16Mb data:
+
+1. have one master index table/collection for each user, which contains the collection 
+reference point for each user along with start date.
+
+2. have ball park number of records once those many number of records are reached, open new collection
+and enter the same in master index collection.
+
+structure of master_index_collection_users:
+{
+user_id :
+data :
+[
+    
+    startdate:
+    user_collection_table:
+    enddate:
+    
+]
+}
+
+master_index_collection_users is not required as this is already catered in the user_regisration
+just change the recordName data :
+presently it is :"sree_r1", "sree_r2"
+what is required is :"ss1@kilasa.com_01mar22", "ss1@kilasa.com_11mar22"
+
+now uploading the data from app to server, 2 implementation:
+1.  send data collected as json in http load to server.
+    a. break the data in chunks of json which can be carried by http of flutter.
+    b. this may require multiple calls.
+    c. if the connection / internet breaks inbetween then data inconsistency, as data is also 
+    not saved locally  .
+2.  save the data collected as json file and then upload the file to server.
+    a. requires access to local memory, file creation and after confirmation of upload then this 
+    can be deleted. therefore read, write file access to local memory both in android and Ios.
+    This implementation may be bit challenge as this require user permission during installation.
+    b.  Upload and parsing of file at server can be done.
+    c.  even if the upload of file, fails then also we have data at locally at mobile and can be 
+    uploaded later. No data inconsistency and can be handled better.
+
+
+we will go with 2nd implementation.
+
+
+
+ 
+
+
+https://stackabuse.com/integrating-mongodb-with-flask-using-flask-pymongo/
